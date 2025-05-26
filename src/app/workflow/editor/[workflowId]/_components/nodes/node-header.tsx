@@ -2,18 +2,23 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { CreateFlowNode } from "@/lib/workflow/create-flow-node";
 import { TaskRegistry } from "@/lib/workflow/task/registry";
+import { AppNode } from "@/types/node/app-node";
 import { TaskType } from "@/types/node/task";
-import { CoinsIcon, GripVerticalIcon } from "lucide-react";
+import { useReactFlow } from "@xyflow/react";
+import { CoinsIcon, CopyIcon, GripVerticalIcon, TrashIcon } from "lucide-react";
 import React from "react";
 
 type Props = {
   taskType: TaskType;
+  nodeId: string;
 };
 
-function NodeHeader({ taskType }: Props) {
+function NodeHeader({ taskType, nodeId }: Props) {
   const task = TaskRegistry[taskType];
   const Icon = task.icon;
+  const { deleteElements, getNode, addNodes } = useReactFlow();
   return (
     <div className="flex items-center gap-2 p-2">
       <Icon size={20} />
@@ -27,6 +32,35 @@ function NodeHeader({ taskType }: Props) {
             <CoinsIcon size={10} />
             TODO
           </Badge>
+
+          {!task.isEntryPoint && (
+            <>
+              <Button
+                onClick={() => deleteElements({ nodes: [{ id: nodeId }] })}
+                variant={"ghost"}
+                size={"icon"}
+              >
+                <TrashIcon size={12} />
+              </Button>
+              <Button
+                onClick={() => {
+                  const node = getNode(nodeId) as AppNode;
+                  const newX = node.position.x + node.measured?.height! * 3;
+                  const newY = node.position.y;
+                  const newNode = CreateFlowNode(node.data.Type, {
+                    x: newX,
+                    y: newY,
+                  });
+                  addNodes([newNode]);
+                }}
+                variant={"ghost"}
+                size={"icon"}
+              >
+                <CopyIcon size={12} />
+              </Button>
+            </>
+          )}
+
           <Button
             variant={"ghost"}
             size={"icon"}

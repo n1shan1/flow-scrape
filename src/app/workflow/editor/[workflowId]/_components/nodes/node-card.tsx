@@ -30,7 +30,7 @@ function NodeCard({ nodeId, children, isSelected }: Props) {
         });
       }}
       className={cn(
-        "rounded-md cursor-pointer bg-secondary border-2 border-separate w-[420px] text-xs gap-1 flex flex-col",
+        "rounded-md cursor-pointer bg-background border-2 border-separate w-[420px] text-xs gap-1 flex flex-col",
         isSelected && "border-primary"
       )}
     >
