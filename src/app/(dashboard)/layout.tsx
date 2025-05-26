@@ -2,6 +2,7 @@ import BreadcrumbHeader from "@/components/global/breadcrumb-header";
 import DesktopSidebar, { MobileSidebar } from "@/components/global/sidebar";
 import { ModeToggle } from "@/components/global/theme-toggle";
 import { Separator } from "@/components/ui/separator";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import React from "react";
 
 type Props = {
@@ -26,6 +27,9 @@ function DashboardLayout({ children }: Props) {
             <BreadcrumbHeader />
           </div>
           <div className="flex items-center justify-between">
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
             <ModeToggle />
           </div>
         </header>

@@ -1,8 +1,9 @@
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import AppProviders from "@/components/providers/app-providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
@@ -22,14 +23,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={`${outfit.className} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          <AppProviders>{children}</AppProviders>
+          <Toaster richColors />
         </body>
       </html>
     </ClerkProvider>
