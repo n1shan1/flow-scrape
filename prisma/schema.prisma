@@ -34,6 +34,7 @@ model WorkflowExecution {
   userId          String
   trigger         String
   status          String
+  definition      String           @default("{}")
   createdAt       DateTime         @default(now())
   startedAt       DateTime?
   completedAt     DateTime?
@@ -62,7 +63,22 @@ model ExecutionPhase {
   creditsCost         String?
   workflowExecutionId String
   workflowExecution   WorkflowExecution @relation(fields: [workflowExecutionId], references: [id], onDelete: Cascade)
+  logs                ExecutionLog[]
 
   @@index([workflowExecutionId])
   @@index([userId])
+}
+
+model ExecutionLog {
+  id               String         @id @default(cuid())
+  logLevel         String
+  message          String
+  timeStamp        DateTime       @default(now())
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  executionPhaseId String
+  executionPhase   ExecutionPhase @relation(fields: [executionPhaseId], references: [id], onDelete: Cascade)
+
+  @@index([executionPhaseId])
+  @@index([logLevel])
 }
