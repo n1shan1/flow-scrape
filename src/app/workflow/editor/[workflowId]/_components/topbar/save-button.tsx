@@ -33,7 +33,8 @@ function SaveButton({ workflowId }: Props) {
           definition: workflowDefinition,
         });
       }}
-      value={"outline"}
+      size={"lg"}
+      variant={"outline"}
       className="flex items-center gap-2"
     >
       {isPending ? (

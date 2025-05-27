@@ -11,14 +11,58 @@ datasource db {
 }
 
 model Workflow {
-  id          String   @id @default(cuid())
-  userId      String
-  name        String
-  description String?
-  definition  String
-  status      String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                String              @id @default(cuid())
+  userId            String
+  name              String
+  description       String?
+  definition        String
+  status            String
+  lastRunAt         DateTime?
+  lastRunId         String?
+  lastRunStatus     String?
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  WorkflowExecution WorkflowExecution[]
 
   @@unique([userId, name])
+  @@index([userId])
+}
+
+model WorkflowExecution {
+  id              String           @id @default(cuid())
+  workflowId      String
+  userId          String
+  trigger         String
+  status          String
+  createdAt       DateTime         @default(now())
+  startedAt       DateTime?
+  completedAt     DateTime?
+  updatedAt       DateTime         @updatedAt
+  creditsConsumed Int              @default(0)
+  workflow        Workflow         @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  ExecutionPhase  ExecutionPhase[]
+
+  @@index([workflowId])
+  @@index([userId])
+}
+
+model ExecutionPhase {
+  id                  String            @id @default(cuid())
+  userId              String
+  status              String
+  number              Int
+  node                String
+  name                String
+  startedAt           DateTime?
+  completedAt         DateTime?
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+  inputs              String?
+  outputs             String?
+  creditsCost         String?
+  workflowExecutionId String
+  workflowExecution   WorkflowExecution @relation(fields: [workflowExecutionId], references: [id], onDelete: Cascade)
+
+  @@index([workflowExecutionId])
+  @@index([userId])
 }
