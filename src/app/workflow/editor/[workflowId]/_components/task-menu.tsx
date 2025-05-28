@@ -15,10 +15,19 @@ function TaskMenu({}: Props) {
   return (
     <aside className="w-[300px] min-w-[300px] max-w-[300px] border-r-2 border-separate h-full p-2 px-4 overflow-auto ">
       <Accordion
-        defaultValue={["extraction"]}
+        defaultValue={["extraction", "interactions", "timing"]}
         type="multiple"
         className="w-full"
       >
+        <AccordionItem value="interactions">
+          <AccordionTrigger className="font-bold">
+            User Interactions
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-2">
+            <TaskMenuBtn taskType={TaskType.FILL_INPUT} />
+            <TaskMenuBtn taskType={TaskType.CLICK_ELEMENT} />
+          </AccordionContent>
+        </AccordionItem>
         <AccordionItem value="extraction">
           <AccordionTrigger className="font-bold">
             Data Extraction
@@ -26,6 +35,14 @@ function TaskMenu({}: Props) {
           <AccordionContent className="flex flex-col gap-2">
             <TaskMenuBtn taskType={TaskType.PAGE_TO_HTML} />
             <TaskMenuBtn taskType={TaskType.EXTRACT_TEXT_FROM_ELEMENT} />
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="timing">
+          <AccordionTrigger className="font-bold">
+            Timing Controls
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-2">
+            <TaskMenuBtn taskType={TaskType.WAIT_FOR_ELEMENT} />
           </AccordionContent>
         </AccordionItem>
       </Accordion>

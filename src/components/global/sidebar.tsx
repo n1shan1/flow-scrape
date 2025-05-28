@@ -21,6 +21,7 @@ import {
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { SignOutButton } from "@clerk/nextjs";
+import UserAvailableCreditsBadge from "./user-available-credits-badge";
 
 type Props = {};
 
@@ -62,9 +63,12 @@ export function MobileSidebar({}: Props) {
           </SheetTrigger>
           <SheetContent side={"left"} className="w-[280px] p-0">
             <div className="flex flex-col h-full">
-              <SheetHeader className="p-4 border-b border-separate">
+              <SheetHeader className="flex flex-col gap-3 p-4 border-b border-separate">
                 <Logo />
               </SheetHeader>
+              <p className="p-2 px-4">
+                <UserAvailableCreditsBadge />
+              </p>
 
               <div className="flex-1 overflow-y-auto p-4">
                 <div className="space-y-2">
@@ -129,6 +133,9 @@ function DesktopSidebar({}: Props) {
       <div className="flex items-center p-6 border-b border-separate">
         <Logo />
       </div>
+      <p className="p-2 px-4">
+        <UserAvailableCreditsBadge />
+      </p>
 
       <nav className="flex-1 overflow-y-auto px-3 py-6">
         <div className="space-y-2">

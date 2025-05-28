@@ -16,8 +16,12 @@ model Workflow {
   name              String
   description       String?
   definition        String
+  executionPlan     String?
+  creditsCost       Int                 @default(0)
   status            String
+  cron              String?
   lastRunAt         DateTime?
+  nextRunAt         DateTime?
   lastRunId         String?
   lastRunStatus     String?
   createdAt         DateTime            @default(now())
@@ -81,4 +85,9 @@ model ExecutionLog {
 
   @@index([executionPhaseId])
   @@index([logLevel])
+}
+
+model UserBalance {
+  userId  String @id
+  credits Int    @default(0)
 }

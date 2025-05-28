@@ -5,6 +5,7 @@ import { useReactFlow } from "@xyflow/react";
 import ParamString from "./param/param-string";
 import { useCallback } from "react";
 import BrowserInstanceParam from "./param/browser-instance-param";
+import SelectParam from "./param/select-param";
 
 type Props = { param: TaskParam; nodeId: string; disabled: boolean };
 
@@ -40,6 +41,15 @@ function NodeParamField({ param, nodeId, disabled }: Props) {
         <BrowserInstanceParam
           param={param}
           value={""}
+          updateNodeParamValue={updateNodeParamValue}
+        />
+      );
+
+    case TaskParamType.SELECT:
+      return (
+        <SelectParam
+          param={param}
+          value={value}
           updateNodeParamValue={updateNodeParamValue}
         />
       );

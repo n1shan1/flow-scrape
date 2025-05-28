@@ -26,7 +26,9 @@ function CustomDialogHeader({
     <DialogHeader className="py-6">
       <DialogTitle asChild>
         <div className="flex flex-col items-center mb-2 gap-2">
-          {Icon && <Icon className={cn("stroke-primary", iconClassName)} />}
+          {Icon && (
+            <Icon className={cn("stroke-primary size-10", iconClassName)} />
+          )}
           {title && (
             <h2
               className={cn(

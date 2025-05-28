@@ -8,7 +8,7 @@ type Props = { children: React.ReactNode };
 
 function layout({ children }: Props) {
   return (
-    <div className=" h-screen flex w-full flex-col ">
+    <div className="h-screen flex w-full flex-col ">
       {children}
       <Separator />
       <footer className="flex items-center justify-between px-6 py-4">

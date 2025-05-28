@@ -67,6 +67,18 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "2rem",
+          sm: "2rem",
+          md: "2rem",
+          lg: "2rem",
+          xl: "2rem",
+          "2xl": "2rem",
+        },
+      },
+
       keyframes: {
         "accordion-down": {
           from: {

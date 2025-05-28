@@ -45,7 +45,7 @@ function NodeHeader({ taskType, nodeId }: Props) {
               <Button
                 onClick={() => {
                   const node = getNode(nodeId) as AppNode;
-                  const newX = node.position.x + node.measured?.height! * 3;
+                  const newX = node.position.x + node.measured?.height!;
                   const newY = node.position.y;
                   const newNode = CreateFlowNode(node.data.Type, {
                     x: newX,

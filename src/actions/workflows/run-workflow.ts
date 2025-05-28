@@ -8,6 +8,7 @@ import {
   WorkflowExecutionPlan,
   WorkflowExecutionStatus,
   WorkflowExecutionTrigger,
+  WorkflowStatus,
 } from "@/types/workflow/status-type";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -41,30 +42,37 @@ export async function RunWorkflow(form: {
     );
   }
   let executionPlan: WorkflowExecutionPlan;
-
-  if (!flowDefinition) {
-    throw new Error("Flow definition is required");
+  let workflowDefinition = flowDefinition;
+  if (workflow.status === WorkflowStatus.PUBLISHED) {
+    if (!workflow.executionPlan) {
+      throw new Error(
+        "Workflow execution plan is not available in published workflow"
+      );
+    }
+    executionPlan = JSON.parse(workflow.executionPlan);
+    workflowDefinition = workflow.definition;
+  } else {
+    if (!flowDefinition) {
+      throw new Error("Flow definition is required");
+    }
+    const flow = JSON.parse(flowDefinition);
+    const result = FlowToExecutionPlan(flow.nodes, flow.edges);
+    if (result.error) {
+      throw new Error("Invalid flow definition: " + result.error);
+    }
+    if (!result.executionPlan) {
+      throw new Error("Execution plan could not be generated");
+    }
+    executionPlan = result.executionPlan;
   }
-  const flow = JSON.parse(flowDefinition);
 
-  const result = FlowToExecutionPlan(flow.nodes, flow.edges);
-
-  if (result.error) {
-    throw new Error("Invalid flow definition: " + result.error);
-  }
-
-  if (!result.executionPlan) {
-    throw new Error("Execution plan could not be generated");
-  }
-
-  executionPlan = result.executionPlan;
   const execution = await prisma.workflowExecution.create({
     data: {
       workflowId: workflow.id,
       userId: userId,
       status: WorkflowExecutionStatus.PENDING,
       startedAt: new Date(),
-      definition: flowDefinition,
+      definition: workflowDefinition,
       trigger: WorkflowExecutionTrigger.MANUAL,
       ExecutionPhase: {
         create: executionPlan.flatMap((phase) =>
