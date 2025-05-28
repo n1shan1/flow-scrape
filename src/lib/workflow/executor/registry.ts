@@ -8,6 +8,8 @@ import { PageToHtmlExecutor } from "./page-to-html-executor";
 import { ClickElement } from "../task/click-element";
 import { ClickElementExecutor } from "./click-element-executor";
 import { WaitForElementExecutor } from "./wait-for-element-executor";
+import { DeliverViaWebhook } from "../task/deliver-via-webhook";
+import { DeliverViaWebhookExecutor } from "./deliver-via-webhook-executor";
 
 type ExecutorFunction<T extends WorkflowTask> = (
   environment: ExecutionEnvironment<T>
@@ -23,4 +25,5 @@ export const ExecutorRegistry: RegistryType = {
   FILL_INPUT: FillInputExecutorExecutor,
   CLICK_ELEMENT: ClickElementExecutor,
   WAIT_FOR_ELEMENT: WaitForElementExecutor,
+  DELIVER_VIA_WEBHOOK: DeliverViaWebhookExecutor,
 };

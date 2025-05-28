@@ -15,7 +15,7 @@ function TaskMenu({}: Props) {
   return (
     <aside className="w-[300px] min-w-[300px] max-w-[300px] border-r-2 border-separate h-full p-2 px-4 overflow-auto ">
       <Accordion
-        defaultValue={["extraction", "interactions", "timing"]}
+        defaultValue={["extraction", "interactions", "timing", "results"]}
         type="multiple"
         className="w-full"
       >
@@ -43,6 +43,14 @@ function TaskMenu({}: Props) {
           </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-2">
             <TaskMenuBtn taskType={TaskType.WAIT_FOR_ELEMENT} />
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="results">
+          <AccordionTrigger className="font-bold">
+            Result Delivery
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-2">
+            <TaskMenuBtn taskType={TaskType.DELIVER_VIA_WEBHOOK} />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
