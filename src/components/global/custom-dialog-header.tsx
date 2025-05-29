@@ -1,7 +1,6 @@
-import React from "react";
-import { DialogHeader, DialogTitle } from "../ui/dialog";
-import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LucideIcon } from "lucide-react";
+import { DialogHeader, DialogTitle } from "../ui/dialog";
 import { Separator } from "../ui/separator";
 
 type Props = {

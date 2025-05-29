@@ -1,16 +1,15 @@
-import { GetPeriods } from "@/actions/analytics/GetPeriods";
-import { waitFor } from "@/lib/waitFor";
-import { Period } from "@/types/analytics/analytics";
-import { Suspense } from "react";
-import PeriodSelector from "./_components/period-selector";
-import { Skeleton } from "@/components/ui/skeleton";
-import { GetStatsCardValue } from "@/actions/analytics/get-stats-card-value";
-import { CirclePlayIcon, CoinsIcon, Waypoints } from "lucide-react";
-import StatsCard from "./_components/stats-card";
-import { GetWorkflowExecutionStats } from "@/actions/analytics/get-workflow-execution-stats";
-import ExecutionStatusChart from "./_components/execution-status-chart";
 import { GetCreditsUsageInPeriod } from "@/actions/analytics/get-credits-usage-in-period";
+import { GetStatsCardValue } from "@/actions/analytics/get-stats-card-value";
+import { GetWorkflowExecutionStats } from "@/actions/analytics/get-workflow-execution-stats";
+import { GetPeriods } from "@/actions/analytics/GetPeriods";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Period } from "@/types/analytics/analytics";
+import { CirclePlayIcon, CoinsIcon, Waypoints } from "lucide-react";
+import { Suspense } from "react";
 import CreditUsageChart from "../billing/_components/credit-usage-chart";
+import ExecutionStatusChart from "./_components/execution-status-chart";
+import PeriodSelector from "./_components/period-selector";
+import StatsCard from "./_components/stats-card";
 
 type Props = { searchParams?: { month?: string; year?: string } };
 

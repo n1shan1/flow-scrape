@@ -13,7 +13,7 @@ import { CoinsIcon } from "lucide-react";
 import React from "react";
 type Props = {};
 
-function TaskMenu({ }: Props) {
+function TaskMenu({}: Props) {
   return (
     <aside className="w-[300px] min-w-[300px] max-w-[300px] border-r-2 border-separate h-full p-2 px-4 overflow-auto ">
       <Accordion
@@ -98,7 +98,10 @@ function TaskMenuBtn({ taskType }: { taskType: TaskType }) {
         <task.icon className="w-4 h-4 mr-2" />
         {task.label}
       </div>
-      <Badge className="gap-1 flex items-center justify-end" variant={"outline"} >
+      <Badge
+        className="gap-1 flex items-center justify-end"
+        variant={"outline"}
+      >
         <CoinsIcon size={10} />
         {task.credits}
       </Badge>

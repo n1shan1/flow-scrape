@@ -1,7 +1,5 @@
 import { GetWorkflowExecutionWithPhases } from "@/actions/workflows/get-workflow-execution-with-phases";
-import { waitFor } from "@/lib/waitFor";
 import { auth } from "@clerk/nextjs/server";
-import React from "react";
 import ExecutionViewer from "./execution-viewer";
 
 type Props = {

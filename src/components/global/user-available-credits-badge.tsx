@@ -4,9 +4,8 @@ import { cn } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { CoinsIcon, Loader2Icon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
-import ReactCountUp from "./react-count-up-wrapper";
 import { buttonVariants } from "../ui/button";
+import ReactCountUp from "./react-count-up-wrapper";
 
 type Props = {};
 

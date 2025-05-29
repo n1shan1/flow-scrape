@@ -1,8 +1,7 @@
-import React, { Suspense } from "react";
-import TopBar from "../../editor/[workflowId]/_components/topbar/topbar";
 import { GetWorkflowExecutions } from "@/actions/workflows/get-workflow-executions";
 import { InboxIcon, Loader2Icon } from "lucide-react";
-import { waitFor } from "@/lib/waitFor";
+import { Suspense } from "react";
+import TopBar from "../../editor/[workflowId]/_components/topbar/topbar";
 import ExecutionsTable from "../_components/executions-table";
 
 type Props = { params: { workflowId: string } };

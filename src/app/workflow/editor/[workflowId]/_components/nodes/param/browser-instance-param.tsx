@@ -1,7 +1,6 @@
 "use client";
 
 import { ParamProps } from "@/types/node/app-node";
-import React from "react";
 
 function BrowserInstanceParam({ param }: ParamProps) {
   return <p className="text-xs">{param.name}</p>;

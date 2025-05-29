@@ -2,7 +2,6 @@ import BreadcrumbHeader from "@/components/global/breadcrumb-header";
 import Logo from "@/components/global/logo";
 import { ModeToggle } from "@/components/global/theme-toggle";
 import { Separator } from "@/components/ui/separator";
-import { ReactFlowProvider } from "@xyflow/react";
 import React from "react";
 
 type Props = { children: React.ReactNode };

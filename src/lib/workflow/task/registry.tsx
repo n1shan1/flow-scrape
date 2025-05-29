@@ -1,17 +1,17 @@
 import { TaskType } from "@/types/node/task";
-import { ExtractTextFromElement } from "./extract-text-from-element";
-import { LaunchBrowserTask } from "./launch-browser";
-import { PageToHtmlTask } from "./page-to-html";
 import { WorkflowTask } from "@/types/workflow/status-type";
-import { FillInputTask } from "./fill-input";
+import { AddPropertyToJSON } from "./add-property-to-json";
 import { ClickElement } from "./click-element";
-import { WaitforElement } from "./wait-for-element";
 import { DeliverViaWebhook } from "./deliver-via-webhook";
 import { ExtractDataWithAI } from "./extract-data-with-ai";
-import { ReadPropertyFromJSON } from "./read-property-from-json";
-import { AddPropertyToJSON } from "./add-property-to-json";
+import { ExtractTextFromElement } from "./extract-text-from-element";
+import { FillInputTask } from "./fill-input";
+import { LaunchBrowserTask } from "./launch-browser";
 import { NavigateURL } from "./navigate-url";
+import { PageToHtmlTask } from "./page-to-html";
+import { ReadPropertyFromJSON } from "./read-property-from-json";
 import { ScrollElement } from "./scroll-element";
+import { WaitforElement } from "./wait-for-element";
 
 export type Registry = {
   [K in TaskType]: WorkflowTask;

@@ -1,6 +1,6 @@
 import { TaskParamType, TaskType } from "@/types/node/task";
 import { WorkflowTask } from "@/types/workflow/status-type";
-import { CodeIcon, GlobeIcon, LucideIcon, LucideProps } from "lucide-react";
+import { CodeIcon, LucideProps } from "lucide-react";
 
 export const PageToHtmlTask = {
   Type: TaskType.PAGE_TO_HTML,

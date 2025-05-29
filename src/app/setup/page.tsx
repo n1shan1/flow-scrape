@@ -1,6 +1,4 @@
 import { SetupUser } from "@/actions/billing/setup-user";
-import { waitFor } from "@/lib/waitFor";
-import React from "react";
 
 type Props = {};
 

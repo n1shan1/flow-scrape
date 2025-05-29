@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
-import UserWorkflowsSkeleton from "./_components/user-workflows-suspense";
-import UserWorkflows from "./_components/user-workflows";
+import { Suspense } from "react";
 import CreateWorkflowDialog from "./_components/create-workflow-dialog";
+import UserWorkflows from "./_components/user-workflows";
+import UserWorkflowsSkeleton from "./_components/user-workflows-suspense";
 
 type Props = {};
 

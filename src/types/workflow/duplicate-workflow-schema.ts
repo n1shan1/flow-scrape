@@ -1,6 +1,5 @@
-import { Workflow } from "lucide-react";
-import { CreateWorkflowSchema } from "./create-workflow-schema";
 import z from "zod";
+import { CreateWorkflowSchema } from "./create-workflow-schema";
 
 export const DuplicateWorkflowSchema = CreateWorkflowSchema.extend({
   workflowId: z.string(),

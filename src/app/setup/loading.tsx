@@ -1,7 +1,6 @@
 import Logo from "@/components/global/logo";
 import { Separator } from "@/components/ui/separator";
 import { Loader2Icon } from "lucide-react";
-import React from "react";
 
 type Props = {};
 

@@ -8,7 +8,6 @@ import {
   Controls,
   Edge,
   getOutgoers,
-  MiniMap,
   ReactFlow,
   useEdgesState,
   useNodesState,
@@ -16,14 +15,14 @@ import {
 } from "@xyflow/react";
 
 import { CreateFlowNode } from "@/lib/workflow/create-flow-node";
+import { TaskRegistry } from "@/lib/workflow/task/registry";
 import { AppNode } from "@/types/node/app-node";
 import { TaskType } from "@/types/node/task";
 import "@xyflow/react/dist/style.css";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect } from "react";
-import NodeUi from "./nodes/node-ui";
 import DeleteEdge from "./edges/delete-edge";
-import { TaskRegistry } from "@/lib/workflow/task/registry";
+import NodeUi from "./nodes/node-ui";
 
 type Props = {
   workflow: Workflow;

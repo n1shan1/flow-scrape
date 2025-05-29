@@ -1,10 +1,10 @@
+import { FlowValidationContextProvider } from "@/components/context/flow-validation-context";
+import { WorkflowStatus } from "@/types/workflow/status-type";
 import { Workflow } from "@prisma/client";
 import { ReactFlowProvider } from "@xyflow/react";
 import FlowEditor from "./flow-editor";
-import TopBar from "./topbar/topbar";
 import TaskMenu from "./task-menu";
-import { FlowValidationContextProvider } from "@/components/context/flow-validation-context";
-import { WorkflowStatus } from "@/types/workflow/status-type";
+import TopBar from "./topbar/topbar";
 type Props = {
   workflow: Workflow;
 };

@@ -1,28 +1,23 @@
 "use client";
 
 import { GetWorkflowExecutions } from "@/actions/workflows/get-workflow-executions";
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { DatesToDurationString } from "@/lib/helper/dates-to-duration-string";
-import { Badge } from "@/components/ui/badge";
-import ExecutionStatusIndicator from "./execution-status-indicator";
-import {
-  ExecutionPhaseStatus,
-  WorkflowExecutionStatus,
-} from "@/types/workflow/status-type";
-import { CoinsIcon } from "lucide-react";
+import { WorkflowExecutionStatus } from "@/types/workflow/status-type";
+import { useQuery } from "@tanstack/react-query";
 import { formatDistanceToNow } from "date-fns";
-import { Card } from "@/components/ui/card";
+import { CoinsIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import ExecutionStatusIndicator from "./execution-status-indicator";
 
 type InitialDataType = Awaited<ReturnType<typeof GetWorkflowExecutions>>;
 

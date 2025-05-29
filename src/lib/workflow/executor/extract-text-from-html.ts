@@ -1,6 +1,6 @@
 import { ExecutionEnvironment } from "@/types/executor/env-type";
-import { ExtractTextFromElement } from "../task/extract-text-from-element";
 import * as cheerio from "cheerio";
+import { ExtractTextFromElement } from "../task/extract-text-from-element";
 
 export async function ExtractTextFromElementExecutor(
   environment: ExecutionEnvironment<typeof ExtractTextFromElement>

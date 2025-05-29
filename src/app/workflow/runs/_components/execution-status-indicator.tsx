@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { WorkflowExecutionStatus } from "@/types/workflow/status-type";
-import React from "react";
 
 type Props = { status: WorkflowExecutionStatus };
 

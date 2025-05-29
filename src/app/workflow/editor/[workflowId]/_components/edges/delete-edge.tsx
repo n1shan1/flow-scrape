@@ -8,7 +8,6 @@ import {
   getSmoothStepPath,
   useReactFlow,
 } from "@xyflow/react";
-import React from "react";
 
 type Props = {};
 

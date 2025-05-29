@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { SignOutButton } from "@clerk/nextjs";
 import {
   BookIcon,
   BotIcon,
@@ -7,12 +8,12 @@ import {
   HomeIcon,
   KeyIcon,
   Layers2Icon,
-  LogOut,
   MenuIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "./logo";
+import { useState } from "react";
+import { Button } from "../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -20,9 +21,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "../ui/sheet";
-import { Button } from "../ui/button";
-import { useState } from "react";
-import { SignOutButton } from "@clerk/nextjs";
+import Logo from "./logo";
 import UserAvailableCreditsBadge from "./user-available-credits-badge";
 
 type Props = {};

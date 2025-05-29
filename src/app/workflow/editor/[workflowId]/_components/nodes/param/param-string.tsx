@@ -2,9 +2,9 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { ParamProps } from "@/types/node/app-node";
 import { useEffect, useId, useState } from "react";
-import { cn } from "@/lib/utils";
 
 type InputComponent = typeof Input | typeof Textarea;
 
@@ -64,9 +64,7 @@ function ParamString({
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      {error && (
-        <p className="text-xs text-red-500 px-2">{error}</p>
-      )}
+      {error && <p className="text-xs text-red-500 px-2">{error}</p>}
       {param.helperText && !error && (
         <p className="text-muted-foreground px-2">{param.helperText}</p>
       )}

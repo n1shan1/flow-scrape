@@ -1,10 +1,9 @@
 "use client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import NextTopLoader from "nextjs-toploader";
 import React from "react";
 import { ThemeProvider } from "./theme-provider";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 type Props = { children: React.ReactNode };
-import NextTopLoader from "nextjs-toploader";
 function AppProviders({ children }: Props) {
   const [queryClient] = React.useState(() => new QueryClient());
 

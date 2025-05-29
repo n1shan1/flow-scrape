@@ -1,6 +1,6 @@
 import { TaskParamType, TaskType } from "@/types/node/task";
 import { WorkflowTask } from "@/types/workflow/status-type";
-import { LucideProps, MousePointerClick, TextIcon } from "lucide-react";
+import { LucideProps, MousePointerClick } from "lucide-react";
 
 export const ClickElement = {
   Type: TaskType.CLICK_ELEMENT,

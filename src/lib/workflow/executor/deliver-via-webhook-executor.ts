@@ -1,7 +1,4 @@
 import { ExecutionEnvironment } from "@/types/executor/env-type";
-import { FillInputTask } from "../task/fill-input";
-import { waitFor } from "@/lib/waitFor";
-import { ClickElement } from "../task/click-element";
 import { DeliverViaWebhook } from "../task/deliver-via-webhook";
 export async function DeliverViaWebhookExecutor(
   environment: ExecutionEnvironment<typeof DeliverViaWebhook>

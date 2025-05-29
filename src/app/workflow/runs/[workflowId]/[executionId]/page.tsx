@@ -1,7 +1,7 @@
 import TopBar from "@/app/workflow/editor/[workflowId]/_components/topbar/topbar";
-import React, { Suspense } from "react";
-import ExecutionViewWrapper from "../../_components/execution-view-wrapper";
 import { Loader2 } from "lucide-react";
+import { Suspense } from "react";
+import ExecutionViewWrapper from "../../_components/execution-view-wrapper";
 
 type Props = {
   params: {

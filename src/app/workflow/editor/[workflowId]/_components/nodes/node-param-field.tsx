@@ -2,11 +2,11 @@
 import { AppNode } from "@/types/node/app-node";
 import { TaskParam, TaskParamType } from "@/types/node/task";
 import { useReactFlow } from "@xyflow/react";
-import ParamString from "./param/param-string";
 import { useCallback } from "react";
 import BrowserInstanceParam from "./param/browser-instance-param";
-import SelectParam from "./param/select-param";
 import CredentialsParam from "./param/credentials-param";
+import ParamString from "./param/param-string";
+import SelectParam from "./param/select-param";
 
 type Props = { param: TaskParam; nodeId: string; disabled: boolean };
 

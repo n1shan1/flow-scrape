@@ -8,7 +8,6 @@ import { AppNode } from "@/types/node/app-node";
 import { TaskType } from "@/types/node/task";
 import { useReactFlow } from "@xyflow/react";
 import { CoinsIcon, CopyIcon, GripVerticalIcon, TrashIcon } from "lucide-react";
-import React from "react";
 
 type Props = {
   taskType: TaskType;

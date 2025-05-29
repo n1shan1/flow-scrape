@@ -3,13 +3,6 @@ import { stripe } from "@/lib/stripe/stripe";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
-// Important: Disable Next.js body parsing to get raw body
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 // Helper to get raw request body as buffer
 const getRawBody = async (req: NextRequest): Promise<Buffer> => {
   const chunks: Buffer[] = [];
