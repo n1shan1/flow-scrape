@@ -7,7 +7,7 @@ type Props = {};
 
 function WorkflowsPage({}: Props) {
   return (
-    <div className="flex flex-1 flex-col h-full px-4 md:px-8 lg:px-16">
+    <div>
       <div className="flex justify-between">
         <div className="flex flex-col">
           <h1 className="text-3xl font-bold">Workflows</h1>

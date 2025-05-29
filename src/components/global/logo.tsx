@@ -10,7 +10,7 @@ type Props = {
 function Logo({ fontSize = "text-2xl", iconSize }: Props) {
   return (
     <Link
-      href={"/"}
+      href={"/home"}
       className={cn("font-extrabold text-center gap-2 flex", fontSize)}
     >
       <div className="rounded-xl bg-gradient-to-r from-primary to-primary/60 p-2">

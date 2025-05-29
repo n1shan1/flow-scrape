@@ -9,11 +9,13 @@ import {
   BreadcrumbSeparator,
 } from "../ui/breadcrumb";
 
-type Props = {};
+type Props = {
+  clickable?: boolean;
+};
 
-function BreadcrumbHeader({}: Props) {
+function BreadcrumbHeader({ clickable }: Props) {
   const pathName = usePathname();
-  const activePath = pathName === "/" ? [""] : pathName.split("/");
+  const activePath = pathName.split("/");
 
   return (
     <div className="flex items-center flex-start">
@@ -22,11 +24,14 @@ function BreadcrumbHeader({}: Props) {
           {activePath.map((path, index) => (
             <React.Fragment key={index}>
               <BreadcrumbItem>
-                <BreadcrumbLink className="capitalize" href={`/${path}`}>
-                  {path === "" ? "Home" : path}
+                <BreadcrumbLink
+                  className="capitalize"
+                  href={!clickable ? `/${path}` : "/workflows"}
+                >
+                  {path}
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              {activePath.length > 1 && <BreadcrumbSeparator />}
+              {activePath.length > 2 && <BreadcrumbSeparator />}
             </React.Fragment>
           ))}
         </BreadcrumbList>

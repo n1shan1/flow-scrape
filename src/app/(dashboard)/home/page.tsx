@@ -23,7 +23,7 @@ function HomePage({ searchParams }: Props) {
     year: year ? Number(year) : currentDate.getFullYear(),
   };
   return (
-    <div className="flex flex-col gap-6 p-6 h-full flex-1 rounded-lg min-h-screen">
+    <div>
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold tracking-tight">Home</h1>

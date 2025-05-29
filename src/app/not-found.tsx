@@ -16,7 +16,7 @@ function NotFoundPage({}: Props) {
         Don&apos;t worry, even the best pages are lost in the vastness of the
         internet.
       </p>
-      <Link href={"/"} className={buttonVariants({ variant: "default" })}>
+      <Link href={"/home"} className={buttonVariants({ variant: "default" })}>
         <ArrowLeft className="mr-2 h-4 w-4" />
         Go Back to Home
       </Link>

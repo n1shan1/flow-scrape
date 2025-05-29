@@ -13,7 +13,7 @@ function layout({ children }: Props) {
   return (
     <div className="relative flex flex-col min-h-screen items-center justify-center gap-4">
       <Link
-        href={"/"}
+        href={"/home"}
         className={cn(
           "absolute top-12 left-12 flex items-center gap-2",
           buttonVariants({ variant: "ghost", size: "lg" })

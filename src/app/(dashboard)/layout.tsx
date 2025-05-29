@@ -26,16 +26,18 @@ function DashboardLayout({ children }: Props) {
             <MobileSidebar />
             <BreadcrumbHeader />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
+            <ModeToggle />
             <SignedIn>
               <UserButton />
             </SignedIn>
-            <ModeToggle />
           </div>
         </header>
         <Separator />
         <div className="overflow-auto">
-          <div className="flex-1 py-4 text-accent-foreground">{children}</div>
+          <div className="container mx-auto flex-1 py-4 text-accent-foreground">
+            {children}
+          </div>
         </div>
       </div>
     </div>

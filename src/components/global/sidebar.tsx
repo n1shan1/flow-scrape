@@ -1,6 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import {
+  BookIcon,
+  BotIcon,
   CoinsIcon,
   HomeIcon,
   KeyIcon,
@@ -27,7 +29,7 @@ type Props = {};
 
 const routes = [
   {
-    href: "/",
+    href: "home",
     label: "Home",
     icon: HomeIcon,
   },
@@ -46,11 +48,22 @@ const routes = [
     label: "Billing",
     icon: CoinsIcon,
   },
+  {
+    href: "docs",
+    label: "Docs",
+    icon: BookIcon,
+  },
+  {
+    href: "contact",
+    label: "contact",
+    icon: BotIcon,
+  },
 ];
 
 export function MobileSidebar({}: Props) {
   const pathName = usePathname();
-  const activePath = pathName === "/" ? "/" : pathName.split("/")[1];
+  const activePath = pathName.split("/")[1];
+  console.log(activePath);
   const [open, setOpen] = useState(false);
   return (
     <div className="block border-separate bg-background md:hidden">

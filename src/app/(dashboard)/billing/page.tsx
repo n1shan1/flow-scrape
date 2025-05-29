@@ -1,4 +1,6 @@
+import { GetCreditsUsageInPeriod } from "@/actions/analytics/get-credits-usage-in-period";
 import { GetAvailableCredits } from "@/actions/billing/get-available-credits";
+import { GetUserPurchaseHistory } from "@/actions/billing/get-user-purchase-history";
 import ReactCountUp from "@/components/global/react-count-up-wrapper";
 import {
   Card,
@@ -8,21 +10,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowLeftIcon, CoinsIcon } from "lucide-react";
-import React, { Suspense } from "react";
-import CreditsPurchase from "./_components/credits-purchase";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Period } from "@/types/analytics/analytics";
-import { GetCreditsUsageInPeriod } from "@/actions/analytics/get-credits-usage-in-period";
-import CreditUsageChart from "./_components/credit-usage-chart";
+import { ArrowLeftIcon, CoinsIcon } from "lucide-react";
+import { Suspense } from "react";
+import CreditsPurchase from "./_components/credits-purchase";
 import PaymentUsageChart from "./_components/payment-usage-chart";
-import { GetUserPurchaseHistory } from "@/actions/billing/get-user-purchase-history";
 
 type Props = {};
 
 function BillingPage({}: Props) {
   return (
-    <div className="flex flex-col px-6 py-4 h-full w-full min-h-screen gap-4">
+    <div className="flex flex-col gap-4">
       <h1 className="text-3xl font-bold">Billing</h1>
       <Suspense
         fallback={

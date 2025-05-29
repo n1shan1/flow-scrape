@@ -26,7 +26,7 @@ async function page({ params }: Props) {
     return (
       <div className="text-center font-bold text-destructive">
         You must be logged in to access this page
-        <Link href={"/"} className={buttonVariants({ variant: "default" })}>
+        <Link href={"/home"} className={buttonVariants({ variant: "default" })}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Go Back to Home
         </Link>
@@ -45,7 +45,7 @@ async function page({ params }: Props) {
     return (
       <div className="text-center font-bold text-destructive">
         Workflow not found
-        <Link href={"/"} className={buttonVariants({ variant: "default" })}>
+        <Link href={"/home"} className={buttonVariants({ variant: "default" })}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Go Back to Home
         </Link>

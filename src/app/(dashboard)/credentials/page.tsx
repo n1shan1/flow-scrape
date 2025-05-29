@@ -11,7 +11,7 @@ type Props = {};
 
 function CredentialsPage({}: Props) {
   return (
-    <div className="flex flex-col gap-4 p-6 h-full">
+    <div>
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col gap-2 mb-4">
