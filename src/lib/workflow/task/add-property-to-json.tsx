@@ -4,7 +4,7 @@ import { DatabaseIcon, LucideProps } from "lucide-react";
 
 export const AddPropertyToJSON = {
   Type: TaskType.ADD_PROPERTY_TO_JSON,
-  label: "Click Element",
+  label: "Add Property to JSON",
   icon: (props: LucideProps) => (
     <DatabaseIcon className="stroke-orange-400" {...props} />
   ),
