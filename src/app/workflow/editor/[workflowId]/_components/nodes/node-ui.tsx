@@ -9,13 +9,12 @@ import { TaskType } from "@/types/node/task";
 import NodeInputs, { NodeInput } from "./node-inputs";
 import NodeOutputs, { NodeOutput } from "./node-outputs";
 import { Badge } from "@/components/ui/badge";
-const DEV_MODE = process.env.NEXT_PUBLIC_DEV_MODE === "true";
+
 const NodeUi = memo((props: NodeProps) => {
   const nodeData = props.data as AppNodeData;
   const task = TaskRegistry[nodeData.Type as TaskType];
   return (
     <NodeCard isSelected={!!props.selected} nodeId={props.id}>
-      {DEV_MODE && <Badge>Dev: {props.id}</Badge>}
       <NodeHeader nodeId={props.id} taskType={nodeData.Type} />
       <NodeInputs>
         {task.inputs.map((input) => (

@@ -7,7 +7,7 @@ type Props = {
   iconSize?: number;
 };
 
-function Logo({ fontSize = "text-2xl", iconSize = 20 }: Props) {
+function Logo({ fontSize = "text-2xl", iconSize }: Props) {
   return (
     <Link
       href={"/"}
@@ -15,7 +15,7 @@ function Logo({ fontSize = "text-2xl", iconSize = 20 }: Props) {
     >
       <div className="rounded-xl bg-gradient-to-r from-primary to-primary/60 p-2">
         <SquareDashedMousePointer
-          size={iconSize}
+          size={iconSize ? iconSize : 20}
           className={cn("stroke-white")}
         />
       </div>

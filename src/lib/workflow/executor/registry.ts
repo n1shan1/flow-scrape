@@ -1,15 +1,18 @@
 import { ExecutionEnvironment } from "@/types/executor/env-type";
 import { TaskType } from "@/types/node/task";
 import { WorkflowTask } from "@/types/workflow/status-type";
+import { AddPropertyToJSONExecutor } from "./add-property-to-json-executor";
+import { ClickElementExecutor } from "./click-element-executor";
+import { DeliverViaWebhookExecutor } from "./deliver-via-webhook-executor";
+import { ExtractDataWithAIExecutor } from "./extract-data-with-ai-executor";
 import { ExtractTextFromElementExecutor } from "./extract-text-from-html";
 import { FillInputExecutorExecutor } from "./fill-input-executor";
 import { LaunchBrowserExecutor } from "./launch-browser-executor";
+import { NavigateURLExecutor } from "./navigate-url-executor";
 import { PageToHtmlExecutor } from "./page-to-html-executor";
-import { ClickElement } from "../task/click-element";
-import { ClickElementExecutor } from "./click-element-executor";
+import { ReadPropertyFromJSONExecutor } from "./read-propert-from-json-executor";
+import { ScrollElementExecutor } from "./scroll-element-executor";
 import { WaitForElementExecutor } from "./wait-for-element-executor";
-import { DeliverViaWebhook } from "../task/deliver-via-webhook";
-import { DeliverViaWebhookExecutor } from "./deliver-via-webhook-executor";
 
 type ExecutorFunction<T extends WorkflowTask> = (
   environment: ExecutionEnvironment<T>
@@ -26,4 +29,9 @@ export const ExecutorRegistry: RegistryType = {
   CLICK_ELEMENT: ClickElementExecutor,
   WAIT_FOR_ELEMENT: WaitForElementExecutor,
   DELIVER_VIA_WEBHOOK: DeliverViaWebhookExecutor,
+  EXTRACT_DATA_WITH_AI: ExtractDataWithAIExecutor,
+  READ_PROPERTY_FROM_JSON: ReadPropertyFromJSONExecutor,
+  ADD_PROPERTY_TO_JSON: AddPropertyToJSONExecutor,
+  NAVIGATE_URL: NavigateURLExecutor,
+  SCROLL_ELEMENT: ScrollElementExecutor,
 };

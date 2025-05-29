@@ -1,6 +1,4 @@
 import { ExecutionEnvironment } from "@/types/executor/env-type";
-import { FillInputTask } from "../task/fill-input";
-import { waitFor } from "@/lib/waitFor";
 import { ClickElement } from "../task/click-element";
 export async function ClickElementExecutor(
   environment: ExecutionEnvironment<typeof ClickElement>
